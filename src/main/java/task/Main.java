@@ -1,8 +1,6 @@
 package task;
 
-import task.models.Camioneta;
-import task.models.CamionetaElectrica;
-import task.models.CamionetaHibrida;
+import task.models.*;
 
 public class Main {
   public static void main(String[] args) {
