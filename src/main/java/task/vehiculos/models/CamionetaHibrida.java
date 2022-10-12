@@ -1,10 +1,10 @@
-package task.models;
+package task.vehiculos.models;
 
 import lombok.Builder;
 import lombok.Getter;
 
 @Getter
-public class CamionetaHibrida extends Camioneta implements IVehiculo {
+public class CamionetaHibrida extends Camioneta {
   
   @Builder(builderMethodName = "hybridBuilder")
   CamionetaHibrida(int puertas, int llantas, int ventanas, String marca,

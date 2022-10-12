@@ -1,33 +1,34 @@
 package task;
 
-import task.models.*;
+import task.dto.ConnecterDB;
+import task.dto.interfaces.IDbCrudOperations;
+import task.vehiculos.models.*;
 
 public class Main {
   public static void main(String[] args) {
+    IDbCrudOperations db = ConnecterDB.createConnection("mongodb");
     
-    Camioneta camioneta = Camioneta.normalBuilder()
+    db.addCar(Camioneta.normalBuilder()
         .llantas(3)
         .ventanas(34)
         .marca("Chevrolet")
         .puertas(2)
-        .build();
+        .build());
     
-    Camioneta camioneta1 = CamionetaElectrica.electricBuilder()
+    db.addCar(CamionetaElectrica.electricBuilder()
         .marca("nissan")
         .ventanas(5)
         .llantas(5)
         .puertas(3)
-        .build();
+        .build());
     
-    Camioneta camioneta2 = CamionetaHibrida.hybridBuilder()
-        .marca("nissan")
+    db.addCar(CamionetaHibrida.hybridBuilder()
+        .marca("Tesla")
         .ventanas(3)
         .llantas(2)
         .puertas(2)
-        .build();
+        .build());
     
-    camioneta.isHybrid();
-    camioneta1.isHybrid();
-    camioneta2.isHybrid();
+    db.getAllCars().forEach(System.out::println);
   }
 }

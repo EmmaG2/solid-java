@@ -1,4 +1,4 @@
-package task.models;
+package task.vehiculos.interfaces;
 
 public interface IVehiculo {
   String arrancarCoche(); // este metodo, arranca el coche, o lo apaga si está encendido

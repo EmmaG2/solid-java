@@ -1,6 +1,7 @@
-package task.models;
+package task.vehiculos.models;
 
 import lombok.*;
+import task.vehiculos.interfaces.IVehiculo;
 
 @Getter
 @Builder(builderMethodName = "normalBuilder")
@@ -61,5 +62,16 @@ public class Camioneta implements IVehiculo {
   @Override
   public void isHybrid() {
     System.out.println("No soy hibrido, soy de GAS");
+  }
+  
+  @Override
+  public String toString() {
+    return "Camioneta{" +
+        "puertas=" + this.puertas +
+        ", llantas=" + this.llantas +
+        ", ventanas=" + this.ventanas +
+        ", marca='" + this.marca + '\'' +
+        ", isEncendida=" + this.isEncendida +
+        '}';
   }
 }

@@ -1,12 +1,10 @@
-package task.models;
+package task.vehiculos.models;
 
 import lombok.Builder;
 import lombok.Getter;
-import lombok.ToString;
 
 @Getter
-@ToString
-public class CamionetaElectrica extends Camioneta implements IVehiculo{
+public class CamionetaElectrica extends Camioneta {
   
   
   @Builder(builderMethodName = "electricBuilder")
@@ -26,5 +24,4 @@ public class CamionetaElectrica extends Camioneta implements IVehiculo{
   public void isHybrid() {
     System.out.println("No soy hibrido, soy electrico");
   }
-  
 }
